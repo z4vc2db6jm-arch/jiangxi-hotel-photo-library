@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>九江锦都龙荷 · 九江市</title><style>
+:root{--navy:#16324f;--navy2:#274b6d;--gold:#b8934a;--ink:#2b2f33;--gray:#6b7280;--line:#e3e7ec;--bg:#f7f8fa;--abg:#eef3f8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;font-size:15px}
+img{display:block}a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:50;background:rgba(22,50,79,.94);display:flex;gap:16px;align-items:center;padding:0 22px;height:52px;overflow-x:auto;white-space:nowrap}
+nav .logo{color:#fff;font-weight:600;letter-spacing:1px;font-size:14px;margin-right:auto}
+nav a{color:rgba(255,255,255,.78);font-size:13px;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{color:#fff;border-color:var(--gold)}
+.hero{position:relative;min-height:44vh;background:#16324f center/cover no-repeat;display:flex;align-items:flex-end}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,50,79,.25),rgba(22,50,79,.55) 55%,rgba(15,32,50,.9))}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:110px max(4vw,24px) 38px;color:#fff}
+.hero .tag{font-size:12px;letter-spacing:5px;color:var(--gold);margin-bottom:10px}
+.hero h1{font-size:clamp(24px,4vw,40px);letter-spacing:2px;font-weight:600;line-height:1.35}
+.hero .en{font-size:12.5px;letter-spacing:2px;color:rgba(255,255,255,.7);margin-top:8px}
+.hero .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero .b{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:3px;font-size:13px}
+.hero .b.gold{background:var(--gold);border-color:var(--gold);font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:38px max(4vw,24px) 10px}
+section.block{margin-bottom:44px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--navy);padding-bottom:12px;margin-bottom:22px}
+.sec-head .no{font-size:13px;color:var(--gold);letter-spacing:2px;font-weight:600}
+.sec-head h2{font-size:21px;letter-spacing:2px;color:var(--navy);font-weight:600}
+.sec-head .en{margin-left:auto;font-size:11px;letter-spacing:3px;color:#a8b0ba;white-space:nowrap}
+.searchbar{position:sticky;top:52px;z-index:40;background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);padding:12px 16px;margin-bottom:26px;display:flex;gap:12px;align-items:center}
+.searchbar input{flex:1;border:1px solid var(--line);border-radius:3px;padding:9px 14px;font-size:14.5px;outline:none;font-family:inherit}
+.searchbar input:focus{border-color:var(--navy2)}
+.searchbar .hint{font-size:12px;color:var(--gray);white-space:nowrap}
+.bars{display:grid;gap:10px;max-width:560px}
+.bar-row{display:grid;grid-template-columns:70px 1fr 60px;align-items:center;gap:12px;font-size:13.5px}
+.bar-row .name{color:var(--gray)}
+.bar-row .val{text-align:right;color:var(--navy);font-weight:600}
+.bar{height:8px;background:#edf0f4;border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy2),var(--gold));border-radius:4px}
+.sub-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font-size:12px;background:var(--abg);color:var(--navy2);border:1px solid #dce5ee;padding:3px 10px;border-radius:2px}
+.chip.note{background:#fdf6e8;border-color:#ecd9b0;color:#8a6d1a}
+table.dir{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border:1px solid var(--line)}
+table.dir th{background:var(--navy);color:#f6f1e0;padding:9px 12px;text-align:left;font-weight:normal;letter-spacing:1px;position:sticky;top:52px}
+table.dir td{padding:8px 12px;border-bottom:1px dashed #e8ebef;vertical-align:middle}
+table.dir tr.dirrow:hover td{background:#f3f7fb}
+table.dir tr.dirrow{cursor:pointer}
+table.dir td.name a{color:var(--navy2);font-weight:600}
+table.dir td.name a:hover{color:var(--gold)}
+table.dir td.rk{color:#8a6d1a;font-weight:600;white-space:nowrap}
+table.dir td.num{text-align:right;color:var(--gray)}
+table.dir td.area{color:var(--gray);white-space:nowrap}
+.enter{display:inline-block;font-size:12px;color:#fff;background:var(--navy2);padding:3px 10px;border-radius:2px;white-space:nowrap}
+.enter:hover{background:var(--gold)}
+/* 酒店详情页 */
+.crumb{font-size:12.5px;color:var(--gray);margin-bottom:14px}
+.crumb a{color:var(--navy2)}
+.crumb a:hover{color:var(--gold)}
+.dhead{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--navy);padding-bottom:12px;margin-bottom:16px;flex-wrap:wrap}
+.dhead h2{font-size:24px;letter-spacing:1px;color:var(--navy)}
+.dhead .rk{font-size:12.5px;font-weight:700;color:#fff;background:var(--gold);padding:3px 12px;border-radius:2px}
+.dhead .cnt{margin-left:auto;font-size:12.5px;color:var(--gray)}
+.metas{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.ctrip{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);box-shadow:0 2px 10px rgba(22,50,79,.05);padding:22px 26px;margin-bottom:18px;font-size:13.5px}
+.ct-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.ct-top .big{font-size:38px;font-weight:700;color:var(--navy);line-height:1}
+.ct-top .lab{color:var(--gray);font-size:12.5px}
+.ct-top .pill{background:var(--gold);color:#fff;padding:3px 12px;border-radius:2px;font-size:12.5px;letter-spacing:1px}
+.ct-top .price{color:#8a6d1a;font-weight:600}
+.ct-cols{display:grid;grid-template-columns:1fr 1.25fr;gap:24px}
+@media(max-width:820px){.ct-cols{grid-template-columns:1fr}}
+.ct-cols h4{font-size:13px;color:var(--navy);margin-bottom:6px;letter-spacing:1px}
+.ct-intro{font-size:13px;color:#3a4046;text-align:justify}
+.ct-near{font-size:12.5px;color:var(--gray)}
+.ct-near div{display:flex;justify-content:space-between;border-bottom:1px dashed #eef0f3;padding:4px 0}
+.ct-near div:last-child{border-bottom:none}
+.ct-near .d{color:var(--navy);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+.ph{position:relative;overflow:hidden;background:#dfe3e8;aspect-ratio:4/3;border:1px solid var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ph:hover img{transform:scale(1.05)}
+.ph .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,32,50,.8));color:#fff;font-size:11.5px;padding:20px 8px 6px;opacity:0;transition:.25s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph:hover .cap{opacity:1}
+.backbar{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
+.backbar a{font-size:13px;padding:9px 18px;border-radius:2px;letter-spacing:1px}
+.backbar .p{background:var(--navy);color:#fff}
+.backbar .s{background:#fff;border:1px solid var(--line);color:var(--navy2)}
+.foot{background:var(--navy);color:rgba(255,255,255,.65);text-align:center;padding:24px;font-size:12.5px;letter-spacing:1px;margin-top:30px}
+.foot b{color:#fff}
+/* 总览 */
+.cityrow{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);padding:18px 22px;margin-bottom:14px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cityrow h2{font-size:17px;color:var(--navy);flex:1;min-width:200px}
+.cityrow .st{font-size:12.5px;color:var(--gray)}
+.cityrow .go{background:var(--navy);color:#fff;padding:8px 18px;font-size:13px;border-radius:2px;letter-spacing:1px}
+.cityrow.empty{border-left-color:#c8ccd2;opacity:.75}
+.results{background:#fff;border:1px solid var(--line);padding:8px 6px;margin-bottom:14px;display:none}
+.results .r{display:flex;gap:10px;align-items:center;padding:9px 14px;border-bottom:1px dashed #eef0f3;flex-wrap:wrap}
+.results .r:last-child{border-bottom:none}
+.results .rn{font-size:14.5px;color:var(--navy);font-weight:600}
+.results .rc,.results .rs{font-size:12px;color:var(--gray)}
+.results .rk{font-size:11.5px;font-weight:700;color:#8a6d1a;background:#fdf0d5;padding:1px 8px;border-radius:2px}
+.results .go{margin-left:auto;font-size:12.5px;color:#fff;background:var(--navy2);padding:4px 12px;border-radius:2px}
+</style></head><body>
+<nav><span class="logo">九江锦都龙荷</span><a href="../%E4%B9%9D%E6%B1%9F%E5%B8%82%E9%85%92%E5%BA%97%E7%9F%A5%E8%AF%86%E5%8D%A1.html">← 返回九江市名录</a><a href="../%E5%9B%BE%E5%BA%93%E7%9F%A5%E8%AF%86%E5%8D%A1_%E6%80%BB%E8%A7%88.html">返回总览</a></nav>
+<div class="hero" style="background:#16324f url('../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%85%92%E5%BA%97%E5%A4%96%E8%A7%8201.jpg') center/cover no-repeat;"><div class="hero-inner">
+<p class="tag">九江市 · HOTEL CARD</p><h1>九江锦都龙荷</h1>
+<div class="badges"><span class="b">8 张实拍图</span><span class="b">携程 4.7 分</span></div>
+</div></div>
+<main>
+<p class="crumb"><a href="../%E5%9B%BE%E5%BA%93%E7%9F%A5%E8%AF%86%E5%8D%A1_%E6%80%BB%E8%A7%88.html">总览</a> › <a href="../%E4%B9%9D%E6%B1%9F%E5%B8%82%E9%85%92%E5%BA%97%E7%9F%A5%E8%AF%86%E5%8D%A1.html">九江市</a> › 九江锦都龙荷</p>
+<div class="dhead"><h2>九江锦都龙荷</h2><span class="cnt">8 张图片</span></div>
+<div class="metas"><span class="chip">来源：2025九江酒店图片</span><span class="chip">其他场景 ×2</span><span class="chip">双床房 ×1</span><span class="chip">大床房 ×1</span><span class="chip">客房卫浴 ×1</span><span class="chip">酒店外观 ×1</span><span class="chip">酒店大堂 ×1</span><span class="chip">餐饮区域 ×1</span></div>
+<div class="ctrip">
+<div class="ct-top"><span class="big">4.7</span><span class="lab">超棒<br>784 条点评</span>
+<span class="pill">4星 · 高档型</span>
+<span class="price">¥198 起</span>
+<span class="lab">☎ 0792-8913999</span>
+<span class="lab">江西省九江市濂溪区庐山大道99号</span></div>
+<div class="ct-cols">
+<div><h4>分项评分</h4><div class="bars"><div class="bar-row"><span class="name">卫生</span><span class="bar"><i style="width:94%"></i></span><span class="val">4.7</span></div><div class="bar-row"><span class="name">设施</span><span class="bar"><i style="width:92%"></i></span><span class="val">4.6</span></div><div class="bar-row"><span class="name">环境</span><span class="bar"><i style="width:94%"></i></span><span class="val">4.7</span></div><div class="bar-row"><span class="name">服务</span><span class="bar"><i style="width:94%"></i></span><span class="val">4.7</span></div></div>
+<h4 style="margin-top:12px">官方标签与榜单</h4><div class="metas" style="margin:0"><span class="chip">免费停车场</span><span class="chip">充电桩</span><span class="chip">洗衣房</span><span class="chip">早餐丰富</span><span class="chip">免费健身室</span><span class="chip">茶室</span><span class="chip">咖啡厅</span></div>
+<h4 style="margin-top:12px">交通与位置</h4><div class="ct-near"><div><span>卓越书店(新五中店)</span><span class="d">520米</span></div><div><span>荷花垄公园</span><span class="d">1.6公里</span></div><div><span>九江汽车总站</span><span class="d">2.4公里</span></div><div><span>万达广场(九江店)</span><span class="d">2.4公里</span></div><div><span>九江站</span><span class="d">4.3公里</span></div></div></div>
+<div><h4>酒店简介<span class="chip note" style="margin-left:8px">落地大窗远眺庐山风景</span></h4>
+<p class="ct-intro">九江锦都龙荷酒店位于九江市濂溪区庐山大道99号，近九江火车站与长途汽车站，是去往庐山北门的便捷落脚点。酒店客房宽敞明亮，部分房间落地窗可远眺庐山风景，配有免费停车场、充电桩、健身室、餐厅与洗衣房，设有亲子家庭房，适合自驾家庭出游。</p>
+<h4 style="margin-top:12px">住客口碑高频词</h4><div class="metas" style="margin:0"><span class="chip note">早餐很棒 85次</span><span class="chip note">环境优雅 75次</span><span class="chip note">性价比高 58次</span><span class="chip note">停车方便 48次</span><span class="chip note">前台热情 40次</span><span class="chip note">去庐山北门很方便 25次</span></div>
+<p style="margin-top:10px;font-size:12.5px;color:var(--gray)">「每次回九江都住这个酒店，这个酒店优点就是安静，热水大，设施也不错，比如化妆镜有正面和放大2面，特别是亲子房，大床配小床，可以睡下一家四口，停车也方便，所有都很不错。」——住客点评 ｜ 2026-10 入住</p>
+<p style="margin-top:8px"><a href="https://hotels.ctrip.com/map/42738624.html" target="_blank" style="color:var(--gold);font-size:12.5px">携程页面 →</a></p></div>
+</div></div>
+<section class="block"><div class="sec-head"><span class="no">图集</span><h2>实景图集</h2><span class="en">GALLERY</span></div>
+<div class="grid"><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%85%B6%E4%BB%96%E5%9C%BA%E6%99%AF01.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%85%B6%E4%BB%96%E5%9C%BA%E6%99%AF01.jpg" loading="lazy" alt="其他场景01"><span class="cap">其他场景01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%85%B6%E4%BB%96%E5%9C%BA%E6%99%AF02.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%85%B6%E4%BB%96%E5%9C%BA%E6%99%AF02.jpg" loading="lazy" alt="其他场景02"><span class="cap">其他场景02</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%8F%8C%E5%BA%8A%E6%88%BF01.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%8F%8C%E5%BA%8A%E6%88%BF01.jpg" loading="lazy" alt="双床房01"><span class="cap">双床房01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%A4%A7%E5%BA%8A%E6%88%BF01.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%A4%A7%E5%BA%8A%E6%88%BF01.jpg" loading="lazy" alt="大床房01"><span class="cap">大床房01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%AE%A2%E6%88%BF%E5%8D%AB%E6%B5%B401.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E5%AE%A2%E6%88%BF%E5%8D%AB%E6%B5%B401.jpg" loading="lazy" alt="客房卫浴01"><span class="cap">客房卫浴01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%85%92%E5%BA%97%E5%A4%96%E8%A7%8201.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%85%92%E5%BA%97%E5%A4%96%E8%A7%8201.jpg" loading="lazy" alt="酒店外观01"><span class="cap">酒店外观01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%85%92%E5%BA%97%E5%A4%A7%E5%A0%8201.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%85%92%E5%BA%97%E5%A4%A7%E5%A0%8201.jpg" loading="lazy" alt="酒店大堂01"><span class="cap">酒店大堂01</span></a><a class="ph" href="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%A4%90%E9%A5%AE%E5%8C%BA%E5%9F%9F01.jpg" target="_blank"><img src="../2025%E4%B9%9D%E6%B1%9F%E9%85%92%E5%BA%97%E5%9B%BE%E7%89%87/%E4%B9%9D%E6%B1%9F%E9%94%A6%E9%83%BD%E9%BE%99%E8%8D%B7/%E9%A4%90%E9%A5%AE%E5%8C%BA%E5%9F%9F01.jpg" loading="lazy" alt="餐饮区域01"><span class="cap">餐饮区域01</span></a></div></section>
+<div class="backbar"><a class="p" href="../%E4%B9%9D%E6%B1%9F%E5%B8%82%E9%85%92%E5%BA%97%E7%9F%A5%E8%AF%86%E5%8D%A1.html">← 返回九江市酒店名录</a><a class="s" href="../%E5%9B%BE%E5%BA%93%E7%9F%A5%E8%AF%86%E5%8D%A1_%E6%80%BB%E8%A7%88.html">返回总览</a></div>
+<p class="foot"><b>九江锦都龙荷</b><br>九江市 ｜ 8 张实拍图 ｜ 资料基于图库命名与携程公开信息 ｜ 生成于 2026-10-22</p>
+</main></body></html>
